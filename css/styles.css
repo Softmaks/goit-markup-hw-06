@@ -741,7 +741,7 @@ display: flex;
 align-items: baseline;
 justify-content: left;
 
-gap: 120px;
+/* gap: 120px; */
 padding: 0px;
 }
 
@@ -749,6 +749,7 @@ padding: 0px;
 margin: 0px;
 padding: 0px;
 min-width:264px;
+margin-right: 120px;
 }
 
 
@@ -763,6 +764,10 @@ min-width:264px;
   width: 264px;
   font-weight: 400;
   font-size: 16px;
+}
+
+.container-footer-social{
+  margin-right: 80px;
 }
 
 .footer-social-title {
@@ -780,13 +785,13 @@ min-width:264px;
 display: flex;
 align-items: baseline;
 gap:16px;
-
 }
 
 .footer-social-item {
 width: 40px;
 height: 40px;
 }
+
 
 .footer-social-link {
 display: flex;
@@ -806,14 +811,78 @@ transition: background-color var(--timing-fun-duration) var(--timing-fun-animati
 fill: var(--second-bg-color);
 }
 
-
 .footer-social-link:hover,
 .footer-social-link:focus {
 background-color:var(--third-social-color);
 }
 
 
+.footer-subscribe {
+  display: flex;
+  gap: 24px;
+  justify-content: left;
+  text-align: center;
+}
+.footer-subscribe-email {
+  display: block;
+  padding: 8px 0 8px 16px;
+  width: 264px;
+  height: 40px;
+  border: 1px solid var(--main-bg-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--footer-bg-color);
+  color: var(--main-btn-color);
+}
 
+.footer-subscribe-email::placeholder{
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+
+  color: var(--main-btn-color);
+}
+
+.footer-subscribe-btn {
+  display: flex;
+  margin: 0 auto;
+  gap: 24px;
+  justify-content: center;
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+  padding: 8px 24px 8px 24px;
+  min-width: 165px;
+  height: 40px;
+  gap: 16px;
+
+  border: none;
+  color: var(--main-btn-color);
+
+  border-radius: 4px;
+  cursor: pointer;
+
+  font-family: var(--primary-font);
+  background-color: var(--first-btnlink-color);
+  color: var(--main-btn-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+.footer-subscribe-btn-icon {
+  fill: var(--main-btn-color);
+}
+
+.footer-subscribe-btn:hover, 
+.footer-subscribe-btn:focus {
+  background-color: var(--second-btnlink-color);
+}
 
 
 /**
@@ -894,9 +963,6 @@ fill: var(--second-bg-color);
 
 
 /* Form */
-.modal-form {
-
-}
 
 .modal-form-title {
   display: block;
@@ -982,7 +1048,6 @@ fill: var(--second-bg-color);
   letter-spacing: 0.04em;
 
   color: rgba(46, 47, 66, 0.4) ;
-
 }
 
 .modal-form-label-agreem {
@@ -997,7 +1062,6 @@ fill: var(--second-bg-color);
 
   margin-bottom: 24px;
 }
-
 
 
 .modal-form-agreem-box{
@@ -1029,9 +1093,4 @@ fill: var(--second-bg-color);
 
 .modal-form-agreem-text{
   margin-left: 8px;
-}
-
-.btn-modal-sub {
-  display: block;
-  margin: 0 auto;
 }
