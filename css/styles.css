@@ -29,6 +29,7 @@ html {
   --main-btn-color: #ffffff;
   --main-title-color: #2e2f42;
   --pf-frame-color: #f4f4fd;
+  --modal-form-text:#8E8F99;
 
   /* Border color */
   --border-color:#E7E9FC;
@@ -53,9 +54,10 @@ html {
   --third-social-color:#31D0AA;
 
 /* Animation */
+  scroll-behavior: smooth;
   --timing-fun-animation: cubic-bezier(0.4, 0, 0.2, 1);
-  --anim-fast: 250ms ease-in;
-  --anim-slow: 1000ms ease-in-out;
+  --timing-fun-duration: 250ms;
+
 }
 
 
@@ -203,7 +205,7 @@ button {
   display: block;
   position: relative;
 
-  transition: color 250ms var(--timing-fun-animation);
+  transition: color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .header-nav-link.actual-link{
@@ -226,7 +228,7 @@ display: block;
 position: absolute;
 left: 0;
 bottom: -1px;
-transition: background-color 250ms var(--timing-fun-animation);
+transition: background-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .header-nav-link.actual-link::after{
@@ -261,7 +263,7 @@ background-color: var(--second-btnlink-color);
   letter-spacing: 0.02em;
   color: var(--main-text-color);
 
-  transition: color 250ms var(--timing-fun-animation);
+  transition: color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .contact-link:hover,
@@ -326,7 +328,7 @@ background-color: var(--second-btnlink-color);
   color: var(--main-btn-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  transition: background-color 250ms var(--timing-fun-animation);
+  transition: background-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 
@@ -511,7 +513,7 @@ background-color: var(--second-social-color);
 background:var(--first-social-color);
 border-radius: 50%;
 
-transition: background-color 250ms var(--timing-fun-animation);
+transition: background-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .team-socials-link:hover,
@@ -566,8 +568,8 @@ border-radius: 4px;
 padding: 16px 32px;
 color: var(--customer-icon);
 
-transition: color 250ms var(--timing-fun-animation), 
-border-color 250ms var(--timing-fun-animation);
+transition: color var(--timing-fun-duration) var(--timing-fun-animation), 
+border-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .customers-link:hover,
@@ -579,7 +581,7 @@ border-color:var(--second-btnlink-color);
 
 .customers-icon{
   fill:currentColor;
-  transition: fill 250ms var(--timing-fun-animation);
+  transition: fill var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .customers-icon:hover,
@@ -633,10 +635,10 @@ fill:currentColor;
   border-radius: 4px;
   border: 1px solid var(--border-color);
 
-  transition: color 250ms var(--timing-fun-animation), 
-  border 250ms var(--timing-fun-animation),
-  box-shadow 250ms var(--timing-fun-animation),
-  background-color 250ms var(--timing-fun-animation);
+  transition: color var(--timing-fun-duration) var(--timing-fun-animation), 
+  border var(--timing-fun-duration) var(--timing-fun-animation),
+  box-shadow var(--timing-fun-duration) var(--timing-fun-animation),
+  background-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .pf-butt-filter:hover,
@@ -677,7 +679,7 @@ border-top: none;
 
 .pf-item-link-hofo{
   display: block;
-  transition: box-shadow 250ms var(--timing-fun-animation);
+  transition: box-shadow var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .pf-item-link-hofo:hover,
@@ -708,7 +710,7 @@ border-top: none;
   color:var(--pf-frame-color);
 
   transform: translateY(100%);
-  transition: transform 250ms var(--timing-fun-animation);
+  transition: transform var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .pf-item-card:hover .pf-overlay{
@@ -797,7 +799,7 @@ width: 100%;
 background:var(--first-social-color);
 border-radius: 50%;
 
-transition: background-color 250ms var(--timing-fun-animation);
+transition: background-color var(--timing-fun-duration) var(--timing-fun-animation);
 }
 
 .footer-social-icon {
@@ -830,9 +832,9 @@ background-color:var(--third-social-color);
   backdrop-filter: blur(0.5px);
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms var(--timing-fun-animation) 250ms,
-  visibility 250ms var(--timing-fun-animation) 250ms,
-  backdrop-filter 250ms var(--timing-fun-animation) 250ms;
+  transition: opacity var(--timing-fun-duration) var(--timing-fun-animation) 250ms,
+  visibility var(--timing-fun-duration) var(--timing-fun-animation) 250ms,
+  backdrop-filter var(--timing-fun-duration) var(--timing-fun-animation) 250ms;
 }
 
 .backdrop.is-hidden {
@@ -840,7 +842,6 @@ background-color:var(--third-social-color);
   pointer-events: none;
   visibility: hidden;
   backdrop-filter: blur(0);
-
 }
 
 .modal {
@@ -858,8 +859,8 @@ background-color:var(--third-social-color);
   padding: 24px;
 
   opacity: 1;
-  transition: transform 250ms var(--timing-fun-animation) 250ms,
-  opacity 250ms var(--timing-fun-animation) 250ms;
+  transition: transform var(--timing-fun-duration) var(--timing-fun-animation) 250ms,
+  opacity var(--timing-fun-duration) var(--timing-fun-animation) 250ms;
 }
 
 .backdrop.is-hidden .modal {
@@ -880,12 +881,157 @@ background-color:var(--third-social-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--border-color);
 
-  transition: background-color 250ms var(--timing-fun-animation),
-  fill 250ms var(--timing-fun-animation);
+  transition: background-color var(--timing-fun-duration) var(--timing-fun-animation),
+  fill var(--timing-fun-duration) var(--timing-fun-animation);
+  margin-bottom: 24px;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
 background-color:var(--second-btnlink-color);
 fill: var(--second-bg-color);
+}
+
+
+/* Form */
+.modal-form {
+
+}
+
+.modal-form-title {
+  display: block;
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--main-title-color);
+  margin-bottom: 16px;
+}
+
+.modal-form-label {
+  display: block;
+  font-size: 12px;
+
+  color: var(--modal-form-text);
+  margin-bottom: 4px;
+}
+
+.modal-form-box {
+  position: relative;
+  margin-bottom: 8px;
+
+}
+
+.modal-form-inbox {
+  width: 99%;
+  height: 40px;
+
+  border-radius: 4px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  padding: 0 38px;
+
+  transition: outline var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+.modal-form-inbox:focus {
+  outline: 1px solid var(--first-btnlink-color);
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: fill var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+.modal-form-inbox:focus + .modal-form-icon{
+  fill: var(--first-btnlink-color);
+}
+
+.modal-form-massage-inbox {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+  padding: 8px 0 0 16px;
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+
+  transition: outline var(--timing-fun-duration) var(--timing-fun-animation);
+  margin-bottom: 16px;
+}
+
+.modal-form-massage-inbox:focus {
+  outline: 1px solid var(--first-btnlink-color);
+}
+
+.modal-form-massage-inbox::placeholder{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+
+  color: rgba(46, 47, 66, 0.4) ;
+
+}
+
+.modal-form-label-agreem {
+  display: flex;
+  align-items: center;
+
+  gap: 0px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: var(--modal-form-text);
+
+  margin-bottom: 24px;
+}
+
+
+
+.modal-form-agreem-box{
+  appearance: none;
+  cursor: pointer;
+  transition: var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+
+.modal-form-agreem-box-icon-unchecked{
+  opacity: 1;
+  transition: var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+.modal-form-agreem-box:checked + .modal-form-agreem-box-icon > 
+.modal-form-agreem-box-icon-unchecked {
+  opacity: 0;
+}
+
+.modal-form-agreem-box-icon-checked {
+  opacity: 0;
+  transition: var(--timing-fun-duration) var(--timing-fun-animation);
+}
+
+.modal-form-agreem-box:checked + .modal-form-agreem-box-icon > 
+.modal-form-agreem-box-icon-checked {
+  opacity: 1;  
+}
+
+.modal-form-agreem-text{
+  margin-left: 8px;
+}
+
+.btn-modal-sub {
+  display: block;
+  margin: 0 auto;
 }
