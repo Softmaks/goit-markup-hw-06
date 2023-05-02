@@ -819,13 +819,12 @@ background-color:var(--third-social-color);
 
 .footer-subscribe {
   display: flex;
-  gap: 24px;
   justify-content: left;
   text-align: center;
 }
 .footer-subscribe-email {
   display: block;
-  padding: 8px 0 8px 16px;
+  padding: 8px 16px 8px 16px;
   width: 264px;
   height: 40px;
   border: 1px solid var(--main-bg-color);
@@ -847,7 +846,7 @@ background-color:var(--third-social-color);
 .footer-subscribe-btn {
   display: flex;
   margin: 0 auto;
-  gap: 24px;
+
   justify-content: center;
   text-align: center;
 
@@ -860,6 +859,7 @@ background-color:var(--third-social-color);
   min-width: 165px;
   height: 40px;
   gap: 16px;
+  margin-left: 24px;
 
   border: none;
   color: var(--main-btn-color);
@@ -925,7 +925,7 @@ background-color:var(--third-social-color);
   background-color: var(--modal-bg-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
 
   opacity: 1;
   transition: transform var(--timing-fun-duration) var(--timing-fun-animation) 250ms,
@@ -938,11 +938,13 @@ background-color:var(--third-social-color);
 }
 
 .modal-btn {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
 
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -952,7 +954,6 @@ background-color:var(--third-social-color);
 
   transition: background-color var(--timing-fun-duration) var(--timing-fun-animation),
   fill var(--timing-fun-duration) var(--timing-fun-animation);
-  margin-bottom: 24px;
 }
 
 .modal-btn:hover,
@@ -965,7 +966,6 @@ fill: var(--second-bg-color);
 /* Form */
 
 .modal-form-title {
-  display: block;
   text-align: center;
 
   font-weight: 500;
@@ -1010,7 +1010,7 @@ fill: var(--second-bg-color);
 .modal-form-icon {
   position: absolute;
   top: 50%;
-  left: 19px;
+  left: 17px;
 
   pointer-events: none;
   transform: translateY(-50%);
@@ -1093,4 +1093,8 @@ fill: var(--second-bg-color);
 
 .modal-form-agreem-text{
   margin-left: 8px;
+}
+
+.modal-form-agreem-link {
+  color: var(--first-btnlink-color)
 }
